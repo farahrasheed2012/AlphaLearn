@@ -83,124 +83,126 @@ struct AlphabetData {
 
     // MARK: - Simplified Tracing Points (normalized 0..1)
     // These define guide paths for each letter within a unit square.
-    // The TracingView scales them to the actual canvas size.
+    // The TracingView renders the guide letter at 70% of canvas size, centered,
+    // so the letter occupies approximately x: 0.15–0.85, y: 0.22–0.78.
+    // All tracing points are calibrated to match that rendered region.
 
     static let tracingA: [CGPoint] = [
-        CGPoint(x: 0.1, y: 0.9), CGPoint(x: 0.5, y: 0.1), CGPoint(x: 0.9, y: 0.9),
-        CGPoint(x: 0.7, y: 0.6), CGPoint(x: 0.3, y: 0.6),
+        CGPoint(x: 0.15, y: 0.78), CGPoint(x: 0.50, y: 0.22), CGPoint(x: 0.85, y: 0.78),
+        CGPoint(x: 0.32, y: 0.56), CGPoint(x: 0.68, y: 0.56),
     ]
     static let tracingB: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.2, y: 0.9),
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.7, y: 0.1), CGPoint(x: 0.8, y: 0.3),
-        CGPoint(x: 0.7, y: 0.5), CGPoint(x: 0.2, y: 0.5),
-        CGPoint(x: 0.7, y: 0.5), CGPoint(x: 0.8, y: 0.7), CGPoint(x: 0.7, y: 0.9),
-        CGPoint(x: 0.2, y: 0.9),
+        CGPoint(x: 0.25, y: 0.22), CGPoint(x: 0.25, y: 0.78),
+        CGPoint(x: 0.25, y: 0.22), CGPoint(x: 0.60, y: 0.22), CGPoint(x: 0.68, y: 0.37),
+        CGPoint(x: 0.60, y: 0.50), CGPoint(x: 0.25, y: 0.50),
+        CGPoint(x: 0.60, y: 0.50), CGPoint(x: 0.70, y: 0.63), CGPoint(x: 0.60, y: 0.78),
+        CGPoint(x: 0.25, y: 0.78),
     ]
     static let tracingC: [CGPoint] = [
-        CGPoint(x: 0.8, y: 0.2), CGPoint(x: 0.5, y: 0.1), CGPoint(x: 0.2, y: 0.3),
-        CGPoint(x: 0.2, y: 0.7), CGPoint(x: 0.5, y: 0.9), CGPoint(x: 0.8, y: 0.8),
+        CGPoint(x: 0.75, y: 0.30), CGPoint(x: 0.50, y: 0.22), CGPoint(x: 0.28, y: 0.35),
+        CGPoint(x: 0.28, y: 0.65), CGPoint(x: 0.50, y: 0.78), CGPoint(x: 0.75, y: 0.70),
     ]
     static let tracingD: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.2, y: 0.9),
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.6, y: 0.1), CGPoint(x: 0.8, y: 0.3),
-        CGPoint(x: 0.8, y: 0.7), CGPoint(x: 0.6, y: 0.9), CGPoint(x: 0.2, y: 0.9),
+        CGPoint(x: 0.25, y: 0.22), CGPoint(x: 0.25, y: 0.78),
+        CGPoint(x: 0.25, y: 0.22), CGPoint(x: 0.55, y: 0.22), CGPoint(x: 0.75, y: 0.38),
+        CGPoint(x: 0.75, y: 0.62), CGPoint(x: 0.55, y: 0.78), CGPoint(x: 0.25, y: 0.78),
     ]
     static let tracingE: [CGPoint] = [
-        CGPoint(x: 0.8, y: 0.1), CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.2, y: 0.5),
-        CGPoint(x: 0.7, y: 0.5), CGPoint(x: 0.2, y: 0.5), CGPoint(x: 0.2, y: 0.9),
-        CGPoint(x: 0.8, y: 0.9),
+        CGPoint(x: 0.72, y: 0.22), CGPoint(x: 0.25, y: 0.22), CGPoint(x: 0.25, y: 0.50),
+        CGPoint(x: 0.65, y: 0.50), CGPoint(x: 0.25, y: 0.50), CGPoint(x: 0.25, y: 0.78),
+        CGPoint(x: 0.72, y: 0.78),
     ]
     static let tracingF: [CGPoint] = [
-        CGPoint(x: 0.8, y: 0.1), CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.2, y: 0.5),
-        CGPoint(x: 0.7, y: 0.5), CGPoint(x: 0.2, y: 0.5), CGPoint(x: 0.2, y: 0.9),
+        CGPoint(x: 0.72, y: 0.22), CGPoint(x: 0.25, y: 0.22), CGPoint(x: 0.25, y: 0.50),
+        CGPoint(x: 0.60, y: 0.50), CGPoint(x: 0.25, y: 0.50), CGPoint(x: 0.25, y: 0.78),
     ]
     static let tracingG: [CGPoint] = [
-        CGPoint(x: 0.8, y: 0.2), CGPoint(x: 0.5, y: 0.1), CGPoint(x: 0.2, y: 0.3),
-        CGPoint(x: 0.2, y: 0.7), CGPoint(x: 0.5, y: 0.9), CGPoint(x: 0.8, y: 0.7),
-        CGPoint(x: 0.8, y: 0.5), CGPoint(x: 0.6, y: 0.5),
+        CGPoint(x: 0.75, y: 0.30), CGPoint(x: 0.50, y: 0.22), CGPoint(x: 0.28, y: 0.35),
+        CGPoint(x: 0.28, y: 0.65), CGPoint(x: 0.50, y: 0.78), CGPoint(x: 0.75, y: 0.65),
+        CGPoint(x: 0.75, y: 0.50), CGPoint(x: 0.55, y: 0.50),
     ]
     static let tracingH: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.2, y: 0.9),
-        CGPoint(x: 0.2, y: 0.5), CGPoint(x: 0.8, y: 0.5),
-        CGPoint(x: 0.8, y: 0.1), CGPoint(x: 0.8, y: 0.9),
+        CGPoint(x: 0.22, y: 0.22), CGPoint(x: 0.22, y: 0.78),
+        CGPoint(x: 0.22, y: 0.50), CGPoint(x: 0.78, y: 0.50),
+        CGPoint(x: 0.78, y: 0.22), CGPoint(x: 0.78, y: 0.78),
     ]
     static let tracingI: [CGPoint] = [
-        CGPoint(x: 0.3, y: 0.1), CGPoint(x: 0.7, y: 0.1),
-        CGPoint(x: 0.5, y: 0.1), CGPoint(x: 0.5, y: 0.9),
-        CGPoint(x: 0.3, y: 0.9), CGPoint(x: 0.7, y: 0.9),
+        CGPoint(x: 0.33, y: 0.22), CGPoint(x: 0.67, y: 0.22),
+        CGPoint(x: 0.50, y: 0.22), CGPoint(x: 0.50, y: 0.78),
+        CGPoint(x: 0.33, y: 0.78), CGPoint(x: 0.67, y: 0.78),
     ]
     static let tracingJ: [CGPoint] = [
-        CGPoint(x: 0.3, y: 0.1), CGPoint(x: 0.7, y: 0.1),
-        CGPoint(x: 0.6, y: 0.1), CGPoint(x: 0.6, y: 0.7),
-        CGPoint(x: 0.5, y: 0.9), CGPoint(x: 0.3, y: 0.8),
+        CGPoint(x: 0.33, y: 0.22), CGPoint(x: 0.67, y: 0.22),
+        CGPoint(x: 0.58, y: 0.22), CGPoint(x: 0.58, y: 0.65),
+        CGPoint(x: 0.48, y: 0.78), CGPoint(x: 0.33, y: 0.70),
     ]
     static let tracingK: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.2, y: 0.9),
-        CGPoint(x: 0.8, y: 0.1), CGPoint(x: 0.2, y: 0.5),
-        CGPoint(x: 0.8, y: 0.9),
+        CGPoint(x: 0.22, y: 0.22), CGPoint(x: 0.22, y: 0.78),
+        CGPoint(x: 0.75, y: 0.22), CGPoint(x: 0.22, y: 0.50),
+        CGPoint(x: 0.75, y: 0.78),
     ]
     static let tracingL: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.2, y: 0.9), CGPoint(x: 0.8, y: 0.9),
+        CGPoint(x: 0.25, y: 0.22), CGPoint(x: 0.25, y: 0.78), CGPoint(x: 0.75, y: 0.78),
     ]
     static let tracingM: [CGPoint] = [
-        CGPoint(x: 0.1, y: 0.9), CGPoint(x: 0.1, y: 0.1), CGPoint(x: 0.5, y: 0.5),
-        CGPoint(x: 0.9, y: 0.1), CGPoint(x: 0.9, y: 0.9),
+        CGPoint(x: 0.13, y: 0.78), CGPoint(x: 0.13, y: 0.22), CGPoint(x: 0.50, y: 0.55),
+        CGPoint(x: 0.87, y: 0.22), CGPoint(x: 0.87, y: 0.78),
     ]
     static let tracingN: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.9), CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.8, y: 0.9),
-        CGPoint(x: 0.8, y: 0.1),
+        CGPoint(x: 0.22, y: 0.78), CGPoint(x: 0.22, y: 0.22), CGPoint(x: 0.78, y: 0.78),
+        CGPoint(x: 0.78, y: 0.22),
     ]
     static let tracingO: [CGPoint] = [
-        CGPoint(x: 0.5, y: 0.1), CGPoint(x: 0.2, y: 0.3), CGPoint(x: 0.2, y: 0.7),
-        CGPoint(x: 0.5, y: 0.9), CGPoint(x: 0.8, y: 0.7), CGPoint(x: 0.8, y: 0.3),
-        CGPoint(x: 0.5, y: 0.1),
+        CGPoint(x: 0.50, y: 0.22), CGPoint(x: 0.25, y: 0.35), CGPoint(x: 0.25, y: 0.65),
+        CGPoint(x: 0.50, y: 0.78), CGPoint(x: 0.75, y: 0.65), CGPoint(x: 0.75, y: 0.35),
+        CGPoint(x: 0.50, y: 0.22),
     ]
     static let tracingP: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.9), CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.7, y: 0.1),
-        CGPoint(x: 0.8, y: 0.3), CGPoint(x: 0.7, y: 0.5), CGPoint(x: 0.2, y: 0.5),
+        CGPoint(x: 0.25, y: 0.78), CGPoint(x: 0.25, y: 0.22), CGPoint(x: 0.62, y: 0.22),
+        CGPoint(x: 0.72, y: 0.36), CGPoint(x: 0.62, y: 0.50), CGPoint(x: 0.25, y: 0.50),
     ]
     static let tracingQ: [CGPoint] = [
-        CGPoint(x: 0.5, y: 0.1), CGPoint(x: 0.2, y: 0.3), CGPoint(x: 0.2, y: 0.7),
-        CGPoint(x: 0.5, y: 0.9), CGPoint(x: 0.8, y: 0.7), CGPoint(x: 0.8, y: 0.3),
-        CGPoint(x: 0.5, y: 0.1), CGPoint(x: 0.65, y: 0.75), CGPoint(x: 0.9, y: 0.95),
+        CGPoint(x: 0.50, y: 0.22), CGPoint(x: 0.25, y: 0.35), CGPoint(x: 0.25, y: 0.65),
+        CGPoint(x: 0.50, y: 0.78), CGPoint(x: 0.75, y: 0.65), CGPoint(x: 0.75, y: 0.35),
+        CGPoint(x: 0.50, y: 0.22), CGPoint(x: 0.62, y: 0.70), CGPoint(x: 0.82, y: 0.82),
     ]
     static let tracingR: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.9), CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.7, y: 0.1),
-        CGPoint(x: 0.8, y: 0.3), CGPoint(x: 0.7, y: 0.5), CGPoint(x: 0.2, y: 0.5),
-        CGPoint(x: 0.5, y: 0.5), CGPoint(x: 0.8, y: 0.9),
+        CGPoint(x: 0.25, y: 0.78), CGPoint(x: 0.25, y: 0.22), CGPoint(x: 0.62, y: 0.22),
+        CGPoint(x: 0.72, y: 0.36), CGPoint(x: 0.62, y: 0.50), CGPoint(x: 0.25, y: 0.50),
+        CGPoint(x: 0.48, y: 0.50), CGPoint(x: 0.75, y: 0.78),
     ]
     static let tracingS: [CGPoint] = [
-        CGPoint(x: 0.8, y: 0.2), CGPoint(x: 0.5, y: 0.1), CGPoint(x: 0.2, y: 0.2),
-        CGPoint(x: 0.2, y: 0.4), CGPoint(x: 0.5, y: 0.5), CGPoint(x: 0.8, y: 0.6),
-        CGPoint(x: 0.8, y: 0.8), CGPoint(x: 0.5, y: 0.9), CGPoint(x: 0.2, y: 0.8),
+        CGPoint(x: 0.72, y: 0.30), CGPoint(x: 0.50, y: 0.22), CGPoint(x: 0.28, y: 0.30),
+        CGPoint(x: 0.28, y: 0.42), CGPoint(x: 0.50, y: 0.50), CGPoint(x: 0.72, y: 0.58),
+        CGPoint(x: 0.72, y: 0.70), CGPoint(x: 0.50, y: 0.78), CGPoint(x: 0.28, y: 0.70),
     ]
     static let tracingT: [CGPoint] = [
-        CGPoint(x: 0.1, y: 0.1), CGPoint(x: 0.9, y: 0.1),
-        CGPoint(x: 0.5, y: 0.1), CGPoint(x: 0.5, y: 0.9),
+        CGPoint(x: 0.15, y: 0.22), CGPoint(x: 0.85, y: 0.22),
+        CGPoint(x: 0.50, y: 0.22), CGPoint(x: 0.50, y: 0.78),
     ]
     static let tracingU: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.2, y: 0.7), CGPoint(x: 0.5, y: 0.9),
-        CGPoint(x: 0.8, y: 0.7), CGPoint(x: 0.8, y: 0.1),
+        CGPoint(x: 0.22, y: 0.22), CGPoint(x: 0.22, y: 0.65), CGPoint(x: 0.50, y: 0.78),
+        CGPoint(x: 0.78, y: 0.65), CGPoint(x: 0.78, y: 0.22),
     ]
     static let tracingV: [CGPoint] = [
-        CGPoint(x: 0.1, y: 0.1), CGPoint(x: 0.5, y: 0.9), CGPoint(x: 0.9, y: 0.1),
+        CGPoint(x: 0.15, y: 0.22), CGPoint(x: 0.50, y: 0.78), CGPoint(x: 0.85, y: 0.22),
     ]
     static let tracingW: [CGPoint] = [
-        CGPoint(x: 0.05, y: 0.1), CGPoint(x: 0.25, y: 0.9), CGPoint(x: 0.5, y: 0.4),
-        CGPoint(x: 0.75, y: 0.9), CGPoint(x: 0.95, y: 0.1),
+        CGPoint(x: 0.08, y: 0.22), CGPoint(x: 0.28, y: 0.78), CGPoint(x: 0.50, y: 0.40),
+        CGPoint(x: 0.72, y: 0.78), CGPoint(x: 0.92, y: 0.22),
     ]
     static let tracingX: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.8, y: 0.9),
-        CGPoint(x: 0.8, y: 0.1), CGPoint(x: 0.2, y: 0.9),
+        CGPoint(x: 0.20, y: 0.22), CGPoint(x: 0.80, y: 0.78),
+        CGPoint(x: 0.80, y: 0.22), CGPoint(x: 0.20, y: 0.78),
     ]
     static let tracingY: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.5, y: 0.5),
-        CGPoint(x: 0.8, y: 0.1), CGPoint(x: 0.5, y: 0.5),
-        CGPoint(x: 0.5, y: 0.9),
+        CGPoint(x: 0.20, y: 0.22), CGPoint(x: 0.50, y: 0.50),
+        CGPoint(x: 0.80, y: 0.22), CGPoint(x: 0.50, y: 0.50),
+        CGPoint(x: 0.50, y: 0.78),
     ]
     static let tracingZ: [CGPoint] = [
-        CGPoint(x: 0.2, y: 0.1), CGPoint(x: 0.8, y: 0.1), CGPoint(x: 0.2, y: 0.9),
-        CGPoint(x: 0.8, y: 0.9),
+        CGPoint(x: 0.22, y: 0.22), CGPoint(x: 0.78, y: 0.22), CGPoint(x: 0.22, y: 0.78),
+        CGPoint(x: 0.78, y: 0.78),
     ]
 
     /// Simple 3-4 letter words for the puzzle game, using only common letters
